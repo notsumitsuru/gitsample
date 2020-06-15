@@ -14,11 +14,32 @@ git commit -m "insert comment"
 git log
     コミットログ
 
+git log b7c909c...bd9039f --name-only --oneline | grep -Ev '.{7} ' | sort | uniq
+    リビジョン間のファイル一覧の取得
+
+git log b7c909c...bd9039f --name-only --oneline | grep -Ev '.{7} ' | sort | uniq | xargs -I% rsync -R % diff-save-directory
+    リビジョン間のファイル一覧を取得し、diff-save-directoryに差分ファイルを保存する
+
+git log b7c909c...bd9039f
+    リビジョン間のコミットログ
+
+git log --name-status
+    ファイルの変更区分をつける[AMD]
+
+git log --name-status |grep -Ev '.{7} '
+    ファイルの変更区分付きの一覧
+
+git log b7c909c...bd9039f --name-status |grep -Ev '.{7} '
+    リビジョン間のファイルの変更区分付きの一覧
+
 git branch branch-name
     ブランチを作成
 
 git branch
     ブランチの一覧を取得
+
+git branch -D branch-name
+    ブランチを削除
 
 git checkout branch-name
     ブランチの切り替え
