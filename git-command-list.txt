@@ -1,0 +1,34 @@
+
+git init
+    カレントディレクトリのローカルリポジトリ化
+
+git add
+    ステージング
+
+git status
+    ステージングしたファイルの確認
+
+git commit -m "insert comment"
+    コミット
+
+git log
+    コミットログ
+
+git branch branch-name
+    ブランチを作成
+
+git branch
+    ブランチの一覧を取得
+
+git checkout branch-name
+    ブランチの切り替え
+
+git push origin branch-name
+    リモートリポジトリへのプッシュ
+
+git pull
+    リモートリポジトリとの同期
+
+git clone remote-repository-URI repository-name
+    リモートリポジトリーのクローン
+
